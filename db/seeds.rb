@@ -6,4 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+100.times do
+  product = Product.new(name: Faker::Beer.name, price: Faker::Number.decimal(1_digits: 2), image_url: Faker::Internet.url, description: Faker::Beer.style)
+  product.save
+end
 
