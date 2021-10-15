@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   #index action - shows all products
   get "/products", controller: "products", action: "index"
 
-  #show action
+  #show action - call upon a specific product
   get "/products/:id", controller: "products", action: "show"
 end
