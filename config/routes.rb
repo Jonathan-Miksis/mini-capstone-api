@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   #show action - call upon a specific product
   get "/products/:id", controller: "products", action: "show"
+
+  #post action - create new
+  post "/products" => "products#create"
 end

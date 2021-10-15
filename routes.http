@@ -3,3 +3,13 @@ GET http://localhost:3000/products.json
 ###
 
 GET http://localhost:3000/products/84
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "input_name": "Sam Adams",
+  "input_price": 5,
+  "input_description": "A tasty Boston beer"
+}

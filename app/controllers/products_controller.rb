@@ -9,4 +9,14 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 
+  def create 
+    product = Product.new(
+      name: params[:input_name],
+      price: params[:input_price],
+      description: params[:input_description],
+    ) 
+    product.save
+    render json: product.as_json
+  end
+
 end
