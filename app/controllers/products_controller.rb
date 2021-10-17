@@ -19,4 +19,9 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 
+  def update
+    # product_update = Product.find_by(params[:id])
+    render json: {message: "hello"}
+  end
+
 end

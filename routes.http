@@ -13,3 +13,11 @@ Content-Type: application/json
   "input_price": 5,
   "input_description": "A tasty Boston beer"
 }
+
+###
+PATCH http://localhost:3000/products/3
+# Content-Type: application/json
+
+# {
+
+# }

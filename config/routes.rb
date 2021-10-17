@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   #post action - create new
   post "/products" => "products#create"
+
+  #patch action - update specific item
+  patch "/products/:id" => "products#update"
 end
