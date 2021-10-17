@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   #patch action - update specific item
   patch "/products/:id" => "products#update"
+
+  #destory action - remove item
+  delete "/products/:id" => "products#destroy"
 end

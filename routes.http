@@ -23,3 +23,6 @@ Content-Type: application/json
   "input_price": 3,
   "input_description": "Cheap tailgating beer"
 }
+
+###
+DELETE http://localhost:3000/products/5.json
