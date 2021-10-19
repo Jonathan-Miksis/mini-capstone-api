@@ -2,9 +2,9 @@ class Product < ApplicationRecord
 
   def is_discontinued?
     if price < 10
-      p "true"
+      return true
     else 
-      p "false"
+      return false 
     end
   end
 
@@ -13,6 +13,9 @@ class Product < ApplicationRecord
     p "Tax on product is $#{tax.round(2)}"
   end
 
-
+  def total
+    total = price + tax 
+    p "The total cost of this product is $#{total}."
+  end
 
 end
