@@ -5,8 +5,14 @@ class Product < ApplicationRecord
       p "true"
     else 
       p "false"
+    end
   end
-end
+
+  def tax
+    tax = price * 0.09
+    p "Tax on product is $#{tax.round(2)}"
+  end
+
 
 
 end

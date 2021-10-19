@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def show
     the_id = params[:id]
     product = Product.find_by(id: the_id)
-    render json: product.as_json(methods: [:is_discontinued?])
+    render json: product.as_json(methods: [:is_discontinued?, :tax])
   end
 
   def create 
