@@ -9,9 +9,9 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "input_name": "Sam Adams",
-  "input_price": 5,
-  "input_description": "A tasty Boston beer"
+  "name": "Bud Light",
+  "price": 5,
+  "description": "Simple Beer"
 }
 
 ###
@@ -19,9 +19,9 @@ PATCH http://localhost:3000/products/17.json
 Content-Type: application/json
 
 {
-  "input_name": "Budweisser",
-  "input_price": 3,
-  "input_description": "Cheap tailgating beer"
+  "name": "Budweisser",
+  "price": 3,
+  "description": "Cheap tailgating beer"
 }
 
 ###
