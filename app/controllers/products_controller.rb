@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: product.errors.full_messages
+      render json: {errors: product.errors.full_messages}, status: unprocessable_entity
     end
   end
 
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     if product_update.save
       render json: product_update
     else
-      render json: product_update.errors.full_messages
+      render json: {errors: product_update.errors.full_messages}, status: unprocessable_entity
     end
 
   end
