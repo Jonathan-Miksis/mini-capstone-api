@@ -17,8 +17,11 @@ class ProductsController < ApplicationController
       price: params[:price],
       description: params[:description],
     ) 
-    product.save
-    render json: product
+    if product.save
+      render json: product
+    else
+      render json: product.errors.full_messages
+    end
   end
 
   def update
@@ -26,8 +29,13 @@ class ProductsController < ApplicationController
     product_update.name = params[:name] || product_update.name
     product_update.price = params[:price] || product_update.price
     product_update.description = params[:description] || product_update.description
-    product_update.save
-    render json: product_update
+    
+    if product_update.save
+      render json: product_update
+    else
+      render json: product_update.errors.full_messages
+    end
+
   end
 
   def destroy

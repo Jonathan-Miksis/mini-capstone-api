@@ -9,8 +9,8 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "Bud Light",
-  "price": 5,
+  "name": "Buddy Light",
+  "price": -5,
   "description": "Simple Beer"
 }
 
@@ -19,7 +19,7 @@ PATCH http://localhost:3000/products/17.json
 Content-Type: application/json
 
 {
-  "name": "Budweisser",
+  "name": "Buddy Light",
   "price": 3,
   "description": "Cheap tailgating beer"
 }
