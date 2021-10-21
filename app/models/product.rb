@@ -1,5 +1,10 @@
 class Product < ApplicationRecord
 
+  validates :name, presence: { message: "You must have a name for the product"}
+  validates :price, numericality: { greater_than: 0 }
+  validates :description, length: { maximum: 500 }
+  validates :name, uniqueness: true
+
   def is_discontinued?
     if price < 10
       return true
