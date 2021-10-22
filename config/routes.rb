@@ -15,4 +15,8 @@ Rails.application.routes.draw do
 
   #destory action - remove item
   delete "/products/:id" => "products#destroy"
+
+  get "/suppliers" => "suppliers#index"
+
+  get "/suppliers/:id" => "suppliers#show"
 end
