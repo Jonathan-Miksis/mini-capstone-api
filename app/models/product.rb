@@ -1,9 +1,14 @@
 class Product < ApplicationRecord
 
-  validates :name, presence: { message: "You must have a name for the product"}
-  validates :price, numericality: { greater_than: 0 }
-  validates :description, length: { maximum: 500 }
-  validates :name, uniqueness: true
+  # validates :name, presence: { message: "You must have a name for the product"}
+  # validates :price, numericality: { greater_than: 0 }
+  # validates :description, length: { maximum: 500 }
+  # validates :name, uniqueness: true
+
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+
 
   def is_discontinued?
     if price < 10
