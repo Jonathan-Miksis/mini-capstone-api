@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
 
+  # belongs_to :supplier
   # validates :name, presence: { message: "You must have a name for the product"}
   # validates :price, numericality: { greater_than: 0 }
   # validates :description, length: { maximum: 500 }
