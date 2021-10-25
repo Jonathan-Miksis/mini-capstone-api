@@ -38,7 +38,16 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Bob",
-  "email": "bob@aol.com",
+  "name": "Joe",
+  "email": "joe@aol.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "joe@aol.com",
   "password": "password"
 }
