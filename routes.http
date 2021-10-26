@@ -1,5 +1,5 @@
 GET http://localhost:3000/products.json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUyOTExNDJ9.Cft9xNlTkIbh1Gcof9sTa6ahw5DlPOEdNLwhIsQ0N9o
 ###
 
 GET http://localhost:3000/products/1
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
   "name": "Buddy Light",
-  "price": -5,
+  "price": 5,
   "description": "Simple Beer"
 }
 
