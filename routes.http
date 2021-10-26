@@ -60,9 +60,16 @@ Content-Type: application/json
 
 {
   "user_id": 2,
-  "product_id": 1,
-  "quantity": 2,
-  "subtotal": 9.99,
-  "tax": 0.70,
-  "total": 10.69
+  "product_id": 2,
+  "quantity": 4,
+  "subtotal": 29.99,
+  "tax": 2.10,
+  "total": 32.09
 }
+
+#Show action for finding an order
+###
+GET http://localhost:3000/orders/1
+
+###
+GET http://localhost:3000/orders
