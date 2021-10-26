@@ -33,6 +33,7 @@ GET http://localhost:3000/suppliers
 ###
 GET http://localhost:3000/suppliers/2
 
+#Create a new user
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -43,6 +44,7 @@ Content-Type: application/json
   "password": "password"
 }
 
+#Login for JWT
 ###
 POST http://localhost:3000/sessions
 Content-Type: application/json
@@ -50,4 +52,17 @@ Content-Type: application/json
 {
   "email": "joe@aol.com",
   "password": "password"
+}
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "product_id": 1,
+  "quantity": 2,
+  "subtotal": 9.99,
+  "tax": 0.70,
+  "total": 10.69
 }

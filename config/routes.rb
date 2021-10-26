@@ -16,10 +16,16 @@ Rails.application.routes.draw do
   #destory action - remove item
   delete "/products/:id" => "products#destroy"
 
+  #show all suppliers
   get "/suppliers" => "suppliers#index"
 
+  #look up one supplier
   get "/suppliers/:id" => "suppliers#show"
 
+  #user routes - create a user and to login
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+
+  post "/orders" => "orders#create"
+
 end
