@@ -3,7 +3,11 @@ class OrdersController < ApplicationController
   def index
     if current_user
       order = Order.all
-      render json: order
+      if order.user_id ==     current_user.id
+        render json: order
+      else
+        render json: {message: "Sorry, no orders found."}
+      end
     else
       render json: {message: "You must be logged in to see the catalog."}
     end
@@ -25,16 +29,17 @@ class OrdersController < ApplicationController
   end
 
   def create
+    product = Product.find_by(id: params[:product_id])
+    calculated_subtotal = params[:quantity] * product.price
     if current_user
       p current_user
       order = Order.new(
-        user_id: params[:user_id],
+        user_id: current_user.id,
         product_id: params[:product_id],
         quantity: params[:quantity],
-        subtotal: product.price,
+        subtotal: calculated_subtotal,
         tax: params[:tax],
         total: params[:total],
-        user_id: current_user.id
       )
       # order.save
       render json: order

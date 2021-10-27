@@ -62,7 +62,7 @@ Content-Type: application/json
 
 {
   "product_id": 6,
-  "quantity": 1,
+  "quantity": 3,
   "tax": 0.07,
   "total": 1.07
 }
@@ -74,4 +74,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODA1N
 
 ###
 GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUzNzgxNjN9.uHi7cVZ4bBpWcsJQiOixDUgFFHUK7sBcxOBPhBP_GS0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODA1NDR9.dqupKm0MWkZRHz0xTesmXZ8wMdzmvhHc8EO3K_c70nc
