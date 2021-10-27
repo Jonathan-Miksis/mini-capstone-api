@@ -2,12 +2,8 @@ class OrdersController < ApplicationController
 
   def index
     if current_user
-      order = Order.all
-      if order.user_id ==     current_user.id
-        render json: order
-      else
-        render json: {message: "Sorry, no orders found."}
-      end
+      order = Order.where(user_id: current_user.id)
+      render json: order
     else
       render json: {message: "You must be logged in to see the catalog."}
     end
@@ -16,14 +12,10 @@ class OrdersController < ApplicationController
 
   def show
     if current_user
-      order = Order.find_by(id: params[:id])
-      if order.user_id == current_user.id
-        render json: order
-      else
-        render json: {message: "Sorry, no orders found."}
-      end
+      order = Order.find_by(id: params[:id], user_id: current_user.id)
+      render json: order
     else
-      render json: {message: "You must be logged in to see the catalog."}
+      render json: {message: "You must be logged in to see your order."}
     end
 
   end
