@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, only: [:create, :update, :destroy] 
+
   def index
     if current_user
       p current_user
@@ -22,11 +24,8 @@ class ProductsController < ApplicationController
       price: params[:price],
       description: params[:description],
     ) 
-    if product.save
-      render json: product
-    else
-      render json: {errors: product.errors.full_messages}, status: unprocessable_entity
-    end
+    product.save
+    render json: product
   end
 
   def update

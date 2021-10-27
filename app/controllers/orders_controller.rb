@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, only: [:show, :index, :create]
 
   def index
     order = Order.where(user_id: current_user.id)
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
       total: calculated_total,
       )
       # order.save
-      render json: order
+    render json: order
   end
 
 end

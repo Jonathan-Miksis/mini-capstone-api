@@ -2,6 +2,8 @@
 
 @bob = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODQ3NDZ9.C3h9QAe232Z48h-OdB5eV78gcqT_YuA82Nc9kBr3G-I
 
+@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUzODc5MDJ9.nYfxOrW6KkCnd3QxMdcB0UanqPb4J2AfpBD_6LKcJmo
+
 
 GET http://localhost:3000/products.json
 Authorization: Bearer {{jwt}}
@@ -11,6 +13,7 @@ GET http://localhost:3000/products/1
 
 ###
 POST http://localhost:3000/products
+Authorization: Bearer {{joe}}
 Content-Type: application/json
 
 {
@@ -24,7 +27,7 @@ PATCH http://localhost:3000/products/17.json
 Content-Type: application/json
 
 {
-  "name": "Buddy Light",
+  "name": "BuddyYay Light",
   "price": 3,
   "description": "Cheap tailgating beer"
 }
@@ -55,7 +58,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "bob@aol.com",
+  "email": "joe@aol.com",
   "password": "password"
 }
 
