@@ -62,9 +62,7 @@ Content-Type: application/json
 
 {
   "product_id": 6,
-  "quantity": 3,
-  "tax": 0.07,
-  "total": 1.07
+  "quantity": 3
 }
 
 #Show action for finding an order
