@@ -24,12 +24,12 @@ class Product < ApplicationRecord
 
   def tax
     tax = price * 0.09
-    p "Tax on product is $#{tax.round(2)}"
+    p tax
   end
 
   def total
     total = price + tax 
-    p "The total cost of this product is $#{total}."
+    p total
   end
 
 end
