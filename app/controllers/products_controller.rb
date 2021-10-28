@@ -2,20 +2,14 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin, only: [:create, :update, :destroy] 
 
   def index
-    if current_user
-      p current_user
-      product = Product.all
-      render json: product
-    else
-      render json: {message: "You must be logged in to view this page."}
-    end
+    product = Product.all
+    render json: product
   end
 
   def show
     the_id = params[:id]
     product = Product.find_by(id: the_id)
-    # render json: product.as_json(methods: [:is_discontinued?, :tax, :total])
-    render json: product
+    render json: product(methods: [:is_discontinued?, :tax, :total])
   end
 
   def create 
@@ -34,12 +28,8 @@ class ProductsController < ApplicationController
     product_update.price = params[:price] || product_update.price
     product_update.description = params[:description] || product_update.description
     
-    if product_update.save
-      render json: product_update
-    else
-      render json: {errors: product_update.errors.full_messages}, status: unprocessable_entity
-    end
-
+    product_update.save
+    render json: product_update
   end
 
   def destroy

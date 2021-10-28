@@ -2,16 +2,17 @@
 
 @bob = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzODQ3NDZ9.C3h9QAe232Z48h-OdB5eV78gcqT_YuA82Nc9kBr3G-I
 
-@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUzODc5MDJ9.nYfxOrW6KkCnd3QxMdcB0UanqPb4J2AfpBD_6LKcJmo
+@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU0NzIzNDh9.RlxbypmmXZbVlPdK9Fv8S0_cBHanqa0IOi_vLP3xqWE
 
-
+##THESE ARE ALL PRODUCT ROUTES
+#Index action for all products
 GET http://localhost:3000/products.json
-Authorization: Bearer {{jwt}}
-###
+Authorization: Bearer {{joe}}
 
+###Show action for just one product
 GET http://localhost:3000/products/1
 
-###
+###Create action for new product
 POST http://localhost:3000/products
 Authorization: Bearer {{joe}}
 Content-Type: application/json
@@ -22,7 +23,7 @@ Content-Type: application/json
   "description": "Simple Beer"
 }
 
-###
+###Update Action for a product
 PATCH http://localhost:3000/products/17.json
 Content-Type: application/json
 
@@ -32,14 +33,19 @@ Content-Type: application/json
   "description": "Cheap tailgating beer"
 }
 
-###
+###Destroy action for one product
 DELETE http://localhost:3000/products/5.json
 
-###
+
+##THESE ARE SUPPLIER ROUTES
+
+###Index Action for all suppliers
 GET http://localhost:3000/suppliers
 
-###
+###Show Action for just one supplier
 GET http://localhost:3000/suppliers/2
+
+##THESE ARE USER ROUTES
 
 #Create a new user
 ###
@@ -62,6 +68,8 @@ Content-Type: application/json
   "password": "password"
 }
 
+##THESE ARE ORDER ROUTES
+
 #Create an order
 ###
 POST http://localhost:3000/orders
@@ -78,6 +86,6 @@ Content-Type: application/json
 GET http://localhost:3000/orders/1
 Authorization: Bearer {{bob}}
 
-###
+###Index Action for all orders 
 GET http://localhost:3000/orders
 Authorization: Bearer {{bob}}
