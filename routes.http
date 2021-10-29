@@ -6,7 +6,7 @@
 
 ##THESE ARE ALL PRODUCT ROUTES
 #Index action for all products
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=IPA
 Authorization: Bearer {{joe}}
 
 ###Show action for just one product
