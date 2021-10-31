@@ -2,7 +2,7 @@
 
 @bob = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU3ODQxNDh9.vEABJQU8I3fmH277tfO3S-rztgYc_M5lljy3AQEoMVU
 
-@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU3ODM5OTd9.ulykyrVgNbTzCbgPPiASTal2yoJX02Y7YXFH4-ee4EM
+@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU3ODU0MjB9.4SukBu1_YM2l1SZ7I3vKgXG0S_dbjpYO7gL7cyaunis
 
 ##THESE ARE ALL PRODUCT ROUTES
 #Index action for all products
@@ -64,7 +64,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "bob@aol.com",
+  "email": "joe@aol.com",
   "password": "password"
 }
 
@@ -77,8 +77,7 @@ Authorization: Bearer {{bob}}
 Content-Type: application/json
 
 {
-  "product_id": 6,
-  "quantity": 3
+
 }
 
 #Show action for finding an order
@@ -103,3 +102,4 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/carted_products
+Authorization: Bearer {{bob}}
