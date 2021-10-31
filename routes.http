@@ -97,7 +97,9 @@ Authorization: Bearer {{bob}}
 Content-Type: application/json
 
 {
-  "product_id": 4,
-  "quantity": 6,
-  "status": "carted"
+  "product_id": 15,
+  "quantity": 2
 }
+
+###
+GET http://localhost:3000/carted_products

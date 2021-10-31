@@ -33,7 +33,9 @@ Rails.application.routes.draw do
 
   get "/orders" => "orders#index"
 
-  #for carted_products - add multiple items
+  #for carted_products - create action
   post "/carted_products" => "carted_products#create"
 
+  #index action for carted_products
+  get "/carted_products" => "carted_products#index"
 end
