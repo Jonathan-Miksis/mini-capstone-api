@@ -76,9 +76,6 @@ POST http://localhost:3000/orders
 Authorization: Bearer {{bob}}
 Content-Type: application/json
 
-{
-
-}
 
 #Show action for finding an order
 ###
