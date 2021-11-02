@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user, only: [:show, :index, :create]
 
   def index
-    order = Order.where(user_id: current_user.id)
+    order = Order.where(user_id: current_user.id, )
     render json: order
 
   end
@@ -16,8 +16,9 @@ class OrdersController < ApplicationController
     carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
     item_price = 0
     carted_products.each do |item|
-      item_price += item.product.price
+      item_price += (item.product.price * item.quantity)
     end
+    subtotal = item_price
     tax = item_price * 0.07
     total = item_price + tax
 
@@ -27,8 +28,16 @@ class OrdersController < ApplicationController
       tax: tax,
       total: total
       )
-      # order.save
+    order.save
+
+    carted_products.each do |item|
+      item.status = "purchased"
+      item.order_id = order.id
+      item.save
+    end
     render json: order
   end
+
+  
 
 end

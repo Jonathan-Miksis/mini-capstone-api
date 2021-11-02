@@ -1,8 +1,8 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUyOTExNDJ9.Cft9xNlTkIbh1Gcof9sTa6ahw5DlPOEdNLwhIsQ0N9o
 
-@bob = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU3ODQxNDh9.vEABJQU8I3fmH277tfO3S-rztgYc_M5lljy3AQEoMVU
+@bob = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4OTYzMzF9.ZOhIcN-BeA8dUutrgQrYnLag0pRp7fz8TZL2skJ0fl8
 
-@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU3ODU0MjB9.4SukBu1_YM2l1SZ7I3vKgXG0S_dbjpYO7gL7cyaunis
+@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU4OTYyOTd9.4EPdFM4dsdyd8n8zBf7OhtCBusdxHxfzTSpPHo98A7I
 
 ##THESE ARE ALL PRODUCT ROUTES
 #Index action for all products
@@ -64,7 +64,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "joe@aol.com",
+  "email": "bob@aol.com",
   "password": "password"
 }
 
@@ -96,10 +96,13 @@ Authorization: Bearer {{bob}}
 Content-Type: application/json
 
 {
-  "product_id": 15,
+  "product_id": 2,
   "quantity": 2
 }
 
 ###
 GET http://localhost:3000/carted_products
 Authorization: Bearer {{bob}}
+
+###
+DELETE http://localhost:3000/carted_products/1

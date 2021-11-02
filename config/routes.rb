@@ -38,4 +38,6 @@ Rails.application.routes.draw do
 
   #index action for carted_products
   get "/carted_products" => "carted_products#index"
+
+  delete "/carted_products/:id" => "carted_products#destroy"
 end

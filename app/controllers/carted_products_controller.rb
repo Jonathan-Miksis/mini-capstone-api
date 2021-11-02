@@ -1,7 +1,7 @@
 class CartedProductsController < ApplicationController
 
   def index
-    carted_products = CartedProduct.where(user_id: current_user.id)
+    carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
     render json: carted_products
   end
 
@@ -10,11 +10,17 @@ class CartedProductsController < ApplicationController
       user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      order_id: false,
       status: "carted"
     )
     carted_product.save
     render json: carted_product
   end
+
+  def destroy
+    carted_product = CartedProduct.find_by(id: params[:id])
+    carted_product.destroy
+    render json: {message: "Item was successfully removed from your cart"}
+  end
+
 
 end
