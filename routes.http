@@ -2,25 +2,25 @@
 
 @bob = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4OTYzMzF9.ZOhIcN-BeA8dUutrgQrYnLag0pRp7fz8TZL2skJ0fl8
 
-@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU4OTYyOTd9.4EPdFM4dsdyd8n8zBf7OhtCBusdxHxfzTSpPHo98A7I
+@joe = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzcyMDE2NDF9.udL2RHRTkZ1i_T8ODDKlaAUzdIqqw5pYURY1qX1biq0
 
 ##THESE ARE ALL PRODUCT ROUTES
 #Index action for all products
 GET http://localhost:3000/products.json
-Authorization: Bearer {{joe}}
+Authorization: Bearer {{bob}}
 
 ###Show action for just one product
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/2
 
 ###Create action for new product
 POST http://localhost:3000/products
-Authorization: Bearer {{joe}}
+Authorization: Bearer {{bob}}
 Content-Type: application/json
 
 {
-  "name": "Buddy Light",
-  "price": 5,
-  "description": "Simple Beer"
+  "name": "Non-Alcoholic Beverage",
+  "price": 2,
+  "description": "Water"
 }
 
 ###Update Action for a product
@@ -34,7 +34,8 @@ Content-Type: application/json
 }
 
 ###Destroy action for one product
-DELETE http://localhost:3000/products/5.json
+DELETE http://localhost:3000/products/3.json
+Authorization: Bearer {{joe}}
 
 
 ##THESE ARE SUPPLIER ROUTES
@@ -64,7 +65,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "bob@aol.com",
+  "email": "joe@aol.com",
   "password": "password"
 }
 
